@@ -1,8 +1,8 @@
-# Docker Imagem Java 8
+# Docker Imagem Java 8 Sample
 
 ### Download da imagem
 
-docker pull marceloagmelo/openjdk-8:TAG_NAME
+docker pull marceloagmelo/java-application-8:TAG_NAME
 
 ### Como usar a imagem
 
@@ -10,7 +10,7 @@ A imagem contém o script control.sh script, este script possui as seguintes op�
 
 #### Help
 
-docker run --rm -ti openjdk-8:TAG_NAME help
+docker run --rm -ti java-application-8:TAG_NAME help
 ```
 ========================================
 USAGE: /control.sh COMMAND [args]
@@ -26,28 +26,13 @@ USAGE: /control.sh COMMAND [args]
 #### Start
 
 ```
-docker run -d -p 0.0.0.0:8080:8080 marceloagmelo/openjdk-8:TAG_NAME start
+docker run -d -p 0.0.0.0:8080:8080 marceloagmelo/java-application-8:TAG_NAME start
 ```
 
 #### shell
 
 ```
-docker run --rm -ti openjdk-8:TAG_NAME shell
-```
-
-## Como criar uma imagem usando essa como FROM
-
-O exemplo abaixo cria uma aplicação usando marceloagmelo/openjdk-8:TAG_NAME como base.
-
-Dockerfile
-
-```
-FROM openjdk-8:TAG_NAME
-ADD app /$APP_HOME/app
-```
-
-```
-docker build NOME-IMAGEM .
+docker run --rm -ti java-application-8:TAG_NAME shell
 ```
 
 ## Time Zone
